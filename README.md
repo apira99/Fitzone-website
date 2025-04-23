@@ -15,10 +15,8 @@ The **FitZone Fitness Center Web Application** is a user-friendly platform desig
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript, React (or your chosen framework)
-- **Backend**: Node.js, Express (or your chosen framework)
-- **Database**: MongoDB, MySQL, or SQLite (depending on your choice)
-- **Authentication**: JWT, OAuth (for member login and registration)
-- **Payment Integration**: Stripe, PayPal, or similar payment gateways
+- **Frontend**: HTML, CSS, JavaScript
+- **Database**: MySQL
+
 
 
