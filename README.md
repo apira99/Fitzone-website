@@ -13,10 +13,6 @@ The **FitZone Fitness Center Web Application** is a user-friendly platform desig
 - **Trainer Scheduling**: Manage and schedule trainers and fitness classes.
 - **Gym Services Showcase**: Display gym services and promotions to potential members.
 
-## Technologies Used
-
-- **Frontend**: HTML, CSS, JavaScript
-- **Database**: MySQL
 
 
 
