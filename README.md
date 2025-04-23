@@ -21,10 +21,4 @@ The **FitZone Fitness Center Web Application** is a user-friendly platform desig
 - **Authentication**: JWT, OAuth (for member login and registration)
 - **Payment Integration**: Stripe, PayPal, or similar payment gateways
 
-## Installation
 
-To run the application locally:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/fitzone-web-app.git
