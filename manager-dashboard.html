@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard - FitZone</title>
+    <link rel="stylesheet" href="dashboard.css"> <!-- Manager-specific CSS -->
+    <style>
+    /* Navigation Bar */
+    header {
+        background: #333;
+        color: #fff;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .navbar h1 {
+        font-size: 1.5rem;
+    }
+    
+    .navbar nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    
+    .navbar nav a:hover {
+        text-decoration: underline;
+    }
+    
+    .centered-title {
+        text-align: center;
+    }
+
+</style>
+    
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Manager Dashboard</h1>
+            <nav>
+                <a href="class.php">Manage classes</a>
+                <a href="manager_appointments.php" >Manage appoinments</a>
+                <a href="respond-queries.html" >Respond to Queries</a>
+                <a href="index.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <h2>Welcome, Manager!</h2>
+        <p>Manage class schedules and respond to queries effectively.</p>
+    </div>
+</body>
+
+</html>

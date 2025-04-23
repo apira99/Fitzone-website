@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respond to Queries</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="class.css">
+    <style>
+        
+        /* Navigation Bar */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+}
+
+.navbar nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+.centered-title {
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Manager Dashboard</h1>
+            <nav>
+                <a href="class.php">Manage classes</a>
+                <a href="manager_appointments.php" >Manage appoinments</a>
+                <a href="respond-queries.html" >Respond to Queries</a>
+                <a href="index.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+    <main class="dashboard">
+        <h1 class="centered-title">Respond to Queries</h1>
+
+       
+        <div id="message-box"></div> <!-- Message box to display success or error messages -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Query</th>
+                    <th>Submitted At</th>
+                    <th>Response</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="queries-table">
+                <!-- Queries will be loaded here -->
+            </tbody>
+        </table>
+    </main>
+    <script>
+        // Fetch and display queries
+        function fetchQueries() {
+            $.ajax({
+                url: 'fetch_queries.php',
+                method: 'GET',
+                success: function (data) {
+                    const table = $('#queries-table');
+                    table.empty();
+                    data.forEach(query => {
+                        table.append(`
+                            <tr>
+                                <td>${query.name}</td>
+                                <td>${query.email}</td>
+                                <td>${query.query}</td>
+                                <td>${query.submitted_at}</td>
+                                <td>
+                                    <textarea id="response-${query.id}">${query.response || ''}</textarea>
+                                </td>
+                                <td>
+                                    <button onclick="saveResponse(${query.id})">Save</button>
+                                </td>
+                            </tr>
+                        `);
+                    });
+                }
+            });
+        }
+
+        // Save the manager's response
+        function saveResponse(id) {
+            const response = $(`#response-${id}`).val(); // Get response from textarea
+            $.ajax({
+                url: 'save_response.php',
+                method: 'POST',
+                data: { id: id, response: response },
+                success: function (data) {
+                    if (data.success) {
+                        showMessage(data.message, 'success'); // Show success message
+                        fetchQueries(); // Refresh the queries list
+                    } else {
+                        showMessage(data.message, 'error'); // Show error message
+                    }
+                },
+                error: function () {
+                    showMessage('Error saving response!', 'error');
+                }
+            });
+        }
+
+        // Display a message on the page
+        function showMessage(message, type) {
+            const messageBox = $('#message-box');
+            messageBox.text(message);
+            messageBox.removeClass('success error').addClass(type); // Add success/error class
+            messageBox.show();
+            setTimeout(() => messageBox.hide(), 3000); // Hide after 3 seconds
+        }
+
+        // Initialize the page
+        $(document).ready(function () {
+            fetchQueries();
+        });
+    </script>
+</body>
+</html>

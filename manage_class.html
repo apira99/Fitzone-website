@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Class Schedules</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Manage Class Schedules</h1>
+        
+        <!-- Add New Class Form -->
+        <form action="manage_classes.php" method="POST">
+            <h2>Add New Class</h2>
+            <label for="class_name">Class Name:</label>
+            <input type="text" id="class_name" name="class_name" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <button type="submit" name="add_class" class="btn">Add Class</button>
+        </form>
+
+        <hr>
+
+        <!-- Existing Classes List -->
+        <h2>Existing Classes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Class Name</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include('manage_classes.php');
+                get_classes(); // Fetch classes and display
+                ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

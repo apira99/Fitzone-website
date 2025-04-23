@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('lbg.png'); /* Replace with the path to your background image */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Align form to the left */
+    align-items: center;
+}
+
+/* Container for Login Form */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 20px; /* Rounded corners for the form */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for better contrast */
+    width: 350px; /* Narrower width for the form */
+    height: 400px; /* Increased height for the form */
+    margin-left: 20px; /* Space between the form and the left edge */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    text-align: center;
+}
+
+/* Header */
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333333;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+input {
+    width: 80%; /* Reduced input width */
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 20px; /* Rounded input fields */
+    font-size: 16px;
+    color: #333333;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent input background */
+    margin: 0 auto; /* Center align input fields */
+    display: block;
+}
+
+input:focus {
+    outline: none;
+    border-color: #27ae60;
+    box-shadow: 0 0 5px #34d68080;
+}
+
+/* Button Styles */
+button {
+    background-color:black;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px; /* Rounded corners for the button */
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%; /* Reduced button width */
+    margin: 20px auto; /* Add spacing and center alignment */
+    display: block;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+/* Message Styles */
+.message {
+    margin-top: 15px;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .login-container {
+        margin-left: 50px; /* Larger margin for widescreens */
+    }
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.8); /* Reduced opacity */
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed; /* Fixes the header to the top */
+    width: 100%; /* Ensures it spans the full width of the page */
+    top: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+header .navbar h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header .navbar nav {
+    margin-top: 10px;
+}
+
+header .navbar nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+header .navbar nav a:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* Add margin-top to the login container to prevent overlap */
+.login-container {
+    margin-top: 100px; /* Adjust based on header height */
+}

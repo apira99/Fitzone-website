@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login With Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('lbg.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .section {
+            margin: 20px;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 4px 6px 8px hwb(113 5% 28% / 0.102);
+            width: 300px;
+            height: 200px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s;
+        }
+
+        .section:hover {
+            transform: scale(1.05);
+        }
+
+        
+
+        .button {
+            background-color: black;
+            color: #fff;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #27ae60;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 18px;
+        }
+
+        .footer a {
+            color: #27ae60;
+            text-decoration: underline;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        .flex {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .flex {
+                flex-direction: column;
+            }
+
+            .section {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login With Us</h1>
+        <p>Choose how you'd like to login to our community</p>
+
+        <div class="flex">
+            <div class="section client-section">
+                <h2>Login as Client</h2>
+                <a href="login.html" class="button">Login</a>
+            </div>
+            <div class="section staff-section">
+                <h2>Login as Management Staff</h2>
+                <a href="manager-login.html" class="button">Login</a>
+            </div>
+            <div class="section admin-section">
+                <h2>Login as Admin</h2>
+                <a href="admin-login.html" class="button">Login</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>New here? <a href="clientregister.php">Click here to register</a></p>
+            <p>wanna go back? <a href="index.html">Click here to go home</a></p>
+        </div>
+    </div>
+</body>
+</html>
